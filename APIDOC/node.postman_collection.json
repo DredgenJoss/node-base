@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "b27c826b-d211-4f04-aae9-c254afc03264",
+		"name": "node",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "API",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server}}/api",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Parametros",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server}}/api/test/get?paramA=A&paramB=B",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"test",
+						"get"
+					],
+					"query": [
+						{
+							"key": "paramA",
+							"value": "A"
+						},
+						{
+							"key": "paramB",
+							"value": "B"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Body",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"Nombre\",\n    \"email\": \"test@test.test\",\n    \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server}}/api/test/post",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"test",
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Body extended",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"username\": \"Nombre\",\n    \"email\": \"test@test.test\",\n    \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server}}/api/test/patch",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"test",
+						"patch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{server}}/api/test/delete/{{Id}}",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"test",
+						"delete",
+						"{{Id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "server",
+			"value": "localhost:8000",
+			"type": "default"
+		},
+		{
+			"key": "Id",
+			"value": "1",
+			"type": "default"
+		}
+	]
+}
